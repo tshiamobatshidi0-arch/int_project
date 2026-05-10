@@ -5,19 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoreChats | Conversation Never Sleeps</title>
-
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap" rel="stylesheet">
-
     <style>
         body {
             font-family: 'Lexend', sans-serif;
         }
 
-        /* Custom Animations */
         @keyframes float3D {
 
             0%,
@@ -65,6 +59,18 @@
         .animate-pulse-3d {
             animation: pulse3D 4s ease-in-out infinite;
         }
+
+        .faq-answer {
+            display: none;
+        }
+
+        .faq-answer.open {
+            display: block;
+        }
+
+        .faq-icon.open {
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 
@@ -73,98 +79,92 @@
     <!-- NAVBAR -->
     <nav
         class="fixed top-5 left-5 right-5 z-50 backdrop-blur-xl bg-white/70 rounded-full shadow-lg flex items-center justify-between px-6 py-3">
-
         <div class="w-36 h-12 rounded-xl overflow-hidden border flex items-center justify-center">
             <img src="../Assets/images/logo.jpg" class="h-full object-cover" />
         </div>
-
         <div class="space-x-6 hidden md:block">
             <button onclick="scrollToSection('features')" class="font-semibold hover:text-blue-600">Features</button>
+            <button onclick="scrollToSection('how-it-works')" class="font-semibold hover:text-blue-600">How It
+                Works</button>
+            <button onclick="scrollToSection('faq')" class="font-semibold hover:text-blue-600">FAQ</button>
             <button onclick="scrollToSection('about')" class="font-semibold hover:text-blue-600">About</button>
         </div>
-
         <button onclick="location.href='login_page.html'"
             class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold shadow hover:scale-105 transition">
             Login
         </button>
-
     </nav>
 
 
     <!-- HERO -->
     <section class="min-h-screen flex items-center px-10 relative">
-
-        <!-- Glow -->
         <div class="absolute top-20 right-20 w-96 h-96 bg-yellow-300 opacity-20 blur-[120px]"></div>
-
         <div class="flex flex-col md:flex-row items-center w-full">
-
-            <!-- TEXT -->
             <div class="flex-1 max-w-xl z-10">
                 <h1
                     class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-900 to-blue-500 text-transparent bg-clip-text">
                     Where the conversation never sleeps.
                 </h1>
-
                 <p class="text-lg text-slate-600 mb-6">
                     Experience fast, simple, and secure messaging and calling for free.
                     Connect with your community across the globe.
                 </p>
-
                 <button onclick="location.href='sign_in_page.html'"
                     class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">
                     Get Started
                 </button>
             </div>
-
-            <!-- HERO IMAGE -->
             <div class="flex-1 h-[70vh] bg-contain bg-no-repeat bg-center animate-float"
                 style="background-image: url('../Assets/images/bg_3.png'); filter: drop-shadow(20px 40px 60px rgba(0,0,0,0.25));">
             </div>
-
         </div>
     </section>
 
 
     <!-- FEATURES -->
     <section id="features" class="bg-slate-50 py-24 px-6">
-
-        <h2 class="text-center text-4xl font-extrabold mb-20">
-            Why you'll love MoreChats
-        </h2>
-
+        <h2 class="text-center text-4xl font-extrabold mb-20">Why you'll love MoreChats</h2>
         <div class="max-w-6xl mx-auto space-y-24">
 
             <!-- ROW 1 -->
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="flex-1 h-72 rounded-3xl shadow bg-cover animate-float"
-                    style="background-image:url('../Assets/images/chat_preview.png')"></div>
-
+                <div class="flex-1 h-72 rounded-3xl shadow-lg overflow-hidden animate-float">
+                    <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&q=80"
+                        alt="Real-Time Messaging" class="w-full h-full object-cover"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#0056b3,#60a5fa)'" />
+                </div>
                 <div class="flex-1 text-lg text-slate-600">
                     <span class="font-extrabold text-blue-600 text-xl">Real-Time Messaging</span><br />
-                    Stay connected with instant delivery of messages and media.
+                    Stay connected with instant delivery of messages and media. Whether it's a quick "Yo!" or a deep
+                    conversation, MoreChats ensures your words land instantly.
                 </div>
             </div>
 
             <!-- ROW 2 -->
             <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-                <div class="flex-1 h-72 rounded-3xl shadow bg-cover animate-pulse-3d"
-                    style="background-image:url('../Assets/images/secure_vault.png')"></div>
-
+                <div class="flex-1 h-72 rounded-3xl shadow-lg overflow-hidden animate-pulse-3d">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+                        alt="Privacy First" class="w-full h-full object-cover"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2027,#2c5364)'" />
+                </div>
                 <div class="flex-1 text-lg text-slate-600">
                     <span class="font-extrabold text-blue-600 text-xl">Privacy First</span><br />
-                    End-to-end encryption keeps your conversations secure.
+                    Your privacy isn't an option; it's the standard. We use end-to-end encryption to ensure your
+                    personal conversations stay between you and the person you're talking to.
                 </div>
             </div>
 
             <!-- ROW 3 -->
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="flex-1 h-72 rounded-3xl shadow bg-cover animate-tilt"
-                    style="background-image:url('../Assets/images/community_hub.png')"></div>
-
+                <div class="flex-1 h-72 rounded-3xl shadow-lg overflow-hidden animate-tilt">
+                    <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800&q=80"
+                        alt="Voice & Video Calls" class="w-full h-full object-cover"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0056b3)'" />
+                </div>
                 <div class="flex-1 text-lg text-slate-600">
-                    <span class="font-extrabold text-blue-600 text-xl">Community Features</span><br />
-                    Join squads, use ALIS AI, and stay connected.
+                    <span class="font-extrabold text-blue-600 text-xl">Voice & Video Calls</span><br />
+                    Go beyond text — hop on a crystal-clear voice or video call with anyone, anywhere. Whether it's a
+                    one-on-one catch-up or a group hangout, MoreChats keeps you face-to-face without the hassle.
                 </div>
             </div>
 
@@ -172,42 +172,340 @@
     </section>
 
 
-    <!-- BOTTOM -->
-    <section id="about"
-        class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-800 to-blue-900 text-white px-6">
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-yellow-500 font-semibold uppercase tracking-widest text-sm mb-3">Simple by design</p>
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">How MoreChats works</h2>
+            <p class="text-slate-500 text-lg mb-16 max-w-xl mx-auto">Up and running in under a minute. No setup, no
+                nonsense.</p>
 
-        <h2 class="text-4xl font-extrabold mb-10">
-            Ready to start the conversation?
-        </h2>
+            <div class="relative flex flex-col md:flex-row items-start justify-between gap-8">
+                <!-- Connector line -->
+                <div
+                    class="hidden md:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-yellow-400 via-blue-400 to-blue-600 z-0">
+                </div>
 
-        <div class="flex flex-col md:flex-row gap-10">
+                <!-- Step 1 -->
+                <div class="flex-1 flex flex-col items-center text-center relative z-10">
+                    <div
+                        class="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center text-3xl font-extrabold text-slate-900 shadow-lg mb-5">
+                        1</div>
+                    <h3 class="font-extrabold text-lg text-slate-900 mb-2">Create your account</h3>
+                    <p class="text-slate-500 text-sm">Sign up in seconds with just your name and email — no credit card
+                        needed.</p>
+                </div>
 
-            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
-                <h3 class="font-bold mb-2">Contact Support</h3>
-                <p>support@morechats.com</p>
-                <p>Global Digital Hub</p>
+                <!-- Step 2 -->
+                <div class="flex-1 flex flex-col items-center text-center relative z-10">
+                    <div
+                        class="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center text-3xl font-extrabold text-white shadow-lg mb-5">
+                        2</div>
+                    <h3 class="font-extrabold text-lg text-slate-900 mb-2">Find your people</h3>
+                    <p class="text-slate-500 text-sm">Search for friends, join community groups, or start a private
+                        conversation instantly.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex-1 flex flex-col items-center text-center relative z-10">
+                    <div
+                        class="w-20 h-20 rounded-full bg-blue-700 flex items-center justify-center text-3xl font-extrabold text-white shadow-lg mb-5">
+                        3</div>
+                    <h3 class="font-extrabold text-lg text-slate-900 mb-2">Start chatting</h3>
+                    <p class="text-slate-500 text-sm">Send messages, make calls, share files — all encrypted, all free,
+                        all the time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 px-6 bg-slate-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-yellow-500 font-semibold uppercase tracking-widest text-sm mb-3">Loved by users</p>
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-16">What people are saying</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-left hover:shadow-md transition">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-6">"MoreChats completely replaced my old messaging apps. The
+                        speed is insane and I love that I don't have to worry about my privacy."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                            JD</div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Jordan D.</p>
+                            <p class="text-slate-400 text-xs">Student, Cape Town</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-left hover:shadow-md transition">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-6">"The video call quality is phenomenal. My team switched from
+                        other platforms and we've never looked back. It's fast, clean and just works."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 font-bold text-sm">
+                            AM</div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Amara M.</p>
+                            <p class="text-slate-400 text-xs">Product Manager, Lagos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-left hover:shadow-md transition">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-6">"I was sceptical at first but MoreChats won me over in the
+                        first five minutes. The UI is slick and the encryption gives me real peace of mind."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold text-sm">
+                            TK</div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Tshepo K.</p>
+                            <p class="text-slate-400 text-xs">Developer, Johannesburg</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 px-6 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-yellow-500 font-semibold uppercase tracking-widest text-sm mb-3">Got questions?</p>
+                <h2 class="text-4xl font-extrabold text-slate-900">Frequently asked questions</h2>
             </div>
 
-            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
-                <h3 class="font-bold mb-2">About</h3>
-                <p>
-                    MoreChats is built for modern communities, bridging messaging and productivity.
-                </p>
+            <div class="space-y-4">
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)"
+                        class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition">
+                        Is MoreChats really free?
+                        <span
+                            class="faq-icon text-blue-600 text-xl font-extrabold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-slate-500 text-sm">
+                        Yes — 100% free, forever. No hidden fees, no premium tiers for basic features. MoreChats is
+                        built on the belief that communication shouldn't cost a thing.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)"
+                        class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition">
+                        How does the end-to-end encryption work?
+                        <span
+                            class="faq-icon text-blue-600 text-xl font-extrabold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-slate-500 text-sm">
+                        Every message is encrypted on your device before it's sent, and only decrypted on the
+                        recipient's device. Not even MoreChats can read your conversations.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)"
+                        class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition">
+                        Can I use MoreChats on multiple devices?
+                        <span
+                            class="faq-icon text-blue-600 text-xl font-extrabold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-slate-500 text-sm">
+                        Absolutely. Your account syncs seamlessly across all your devices — phone, tablet, and desktop —
+                        so you never miss a message.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)"
+                        class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition">
+                        How many people can join a group chat?
+                        <span
+                            class="faq-icon text-blue-600 text-xl font-extrabold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-slate-500 text-sm">
+                        Group chats support up to 500 members, making MoreChats perfect for both small friend groups and
+                        large community hubs.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)"
+                        class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition">
+                        Is my data sold to third parties?
+                        <span
+                            class="faq-icon text-blue-600 text-xl font-extrabold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-slate-500 text-sm">
+                        Never. We do not sell, share, or monetise your personal data. Your information belongs to you,
+                        full stop.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEWSLETTER -->
+    <section class="py-24 px-6 bg-slate-900 relative overflow-hidden">
+        <div
+            class="absolute -top-20 -left-20 w-96 h-96 bg-yellow-400 opacity-10 blur-[120px] rounded-full pointer-events-none">
+        </div>
+        <div
+            class="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600 opacity-15 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-2xl mx-auto text-center">
+            <p class="text-yellow-400 font-semibold uppercase tracking-widest text-sm mb-3">Stay in the loop</p>
+            <h2 class="text-4xl font-extrabold text-white mb-4">Get MoreChats updates</h2>
+            <p class="text-slate-400 text-lg mb-10">New features, community news, and tips — straight to your inbox. No
+                spam, ever.</p>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <input type="email" placeholder="you@morechats.com"
+                    class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-500 outline-none focus:border-yellow-400 transition text-sm" />
+                <button
+                    class="bg-yellow-400 text-slate-900 px-8 py-4 rounded-full font-extrabold hover:bg-yellow-300 hover:scale-105 transition text-sm whitespace-nowrap">
+                    Subscribe →
+                </button>
+            </div>
+            <p class="text-slate-600 text-xs mt-4">By subscribing you agree to our Privacy Policy. Unsubscribe anytime.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ABOUT / FOOTER -->
+    <section id="about"
+        class="relative overflow-hidden min-h-screen flex flex-col justify-center items-center text-center text-white px-6 py-24"
+        style="background: radial-gradient(ellipse at 20% 50%, #1d4ed8 0%, #1e3a8a 40%, #0f172a 100%);">
+
+        <div
+            class="absolute top-10 left-10 w-72 h-72 bg-yellow-400 opacity-10 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 opacity-10 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="relative z-10 mb-16">
+            <p class="text-yellow-400 font-semibold uppercase tracking-widest text-sm mb-3">Join the community</p>
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                Ready to start the<br />
+                <span
+                    style="background: linear-gradient(90deg, #ffd12b, #facc15); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    conversation?
+                </span>
+            </h2>
+            <p class="text-blue-200 text-lg max-w-xl mx-auto mb-8">
+                Millions of people use MoreChats every day. Fast, secure, and always free — your next great conversation
+                is one tap away.
+            </p>
+            <button onclick="location.href='sign_in_page.html'"
+                class="bg-yellow-400 text-slate-900 px-10 py-3 rounded-full font-extrabold text-lg shadow-lg hover:scale-105 hover:bg-yellow-300 transition">
+                Get Started Free →
+            </button>
+        </div>
+
+        <div class="relative z-10 flex flex-col md:flex-row gap-6 w-full max-w-4xl mb-16">
+
+            <div
+                class="flex-1 text-left bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/10 transition">
+                <div class="text-3xl mb-4">📬</div>
+                <h3 class="font-extrabold text-xl mb-1 text-yellow-400">Contact Support</h3>
+                <p class="text-blue-200 text-sm mb-4">We're always around — reach out and we'll get back to you within
+                    the hour.</p>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center gap-2 text-white/80"><span
+                            class="text-yellow-400">✉</span><span>support@morechats.com</span></div>
+                    <div class="flex items-center gap-2 text-white/80"><span
+                            class="text-yellow-400">📍</span><span>Global Digital Hub</span></div>
+                    <div class="flex items-center gap-2 text-white/80"><span class="text-yellow-400">🕐</span><span>24 /
+                            7 Support</span></div>
+                </div>
+            </div>
+
+            <div
+                class="flex-1 text-left bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/10 transition">
+                <div class="text-3xl mb-4">💬</div>
+                <h3 class="font-extrabold text-xl mb-1 text-yellow-400">About MoreChats</h3>
+                <p class="text-blue-200 text-sm mb-4">Built for modern communities — from friend groups to professional
+                    teams.</p>
+                <ul class="space-y-2 text-sm text-white/80">
+                    <li class="flex items-center gap-2"><span class="text-yellow-400">✓</span> End-to-end encrypted by
+                        default</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-400">✓</span> Works on any device,
+                        anywhere</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-400">✓</span> Always 100% free to use
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                class="flex-1 text-left bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/10 transition">
+                <div class="text-3xl mb-4">🚀</div>
+                <h3 class="font-extrabold text-xl mb-1 text-yellow-400">By the Numbers</h3>
+                <p class="text-blue-200 text-sm mb-4">MoreChats in the wild.</p>
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <p class="text-3xl font-extrabold text-white">2M+</p>
+                        <p class="text-blue-300">Active users</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold text-white">99.9%</p>
+                        <p class="text-blue-300">Uptime guaranteed</p>
+                    </div>
+                </div>
             </div>
 
         </div>
 
-        <footer class="absolute bottom-6 text-sm opacity-70">
-            © 2024 MoreChats. Designed for the community.
+        <footer
+            class="relative z-10 w-full max-w-4xl border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
+            <span>© 2024 MoreChats. Designed for the community.</span>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-yellow-400 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-yellow-400 transition">Terms of Service</a>
+                <a href="#" class="hover:text-yellow-400 transition">Twitter / X</a>
+            </div>
         </footer>
 
     </section>
 
 
-    <!-- SCRIPT -->
     <script>
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+
+        function toggleFAQ(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = answer.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+
+            // Open clicked if it was closed
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('open');
+            }
         }
     </script>
 
