@@ -5,52 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Account | MoreChats</title>
-    <link rel="stylesheet" href="../css/edit_account.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-blue': '#0056b3', 'brand-gold': '#ffd12b' },
+                    backgroundImage: { 'happy-gradient': 'linear-gradient(135deg, #0056b3 0%, #002b5a 100%)' }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div class="edit-wrapper">
-        <nav class="side-nav">
-            <div class="logo-box">
-                <img src="../Assets/images/logo.jpg" alt="MoreChats">
+<body class="font-lexend bg-slate-50 min-h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] min-h-screen">
+        <nav class="bg-happy-gradient p-10 text-white">
+            <div class="bg-white p-3 rounded-2xl mb-12 shadow-lg">
+                <img src="../Assets/images/logo.jpg" alt="Logo" class="w-full rounded-lg">
             </div>
-            <ul class="nav-links">
-                <li class="active">Profile Info</li>
-                <li onclick="location.href='dashboard.html'">Back to Chats</li>
+            <ul class="space-y-4">
+                <li class="bg-white/10 p-4 rounded-xl font-bold cursor-pointer">Profile Info</li>
+                <li onclick="location.href='dashboard.html'"
+                    class="p-4 rounded-xl font-medium opacity-60 hover:opacity-100 hover:bg-white/5 cursor-pointer transition-all">
+                    Back to Chats</li>
             </ul>
         </nav>
 
-        <main class="content-area">
-            <header class="content-header">
-                <h1>Edit Your Account</h1>
-                <p>Manage your MoreChats member identity.</p>
+        <main class="p-12 max-w-4xl">
+            <header class="mb-10">
+                <h1 class="text-4xl font-extrabold text-slate-800">Edit Your Account</h1>
+                <p class="text-slate-500 font-medium">Manage your MoreChats member identity.</p>
             </header>
 
-            <div class="settings-card">
-                <form id="edit-form">
-                    <div class="avatar-upload">
-                        <div class="current-avatar">
-                            <span>TM</span>
-                        </div>
-                        <button type="button" class="secondary-btn">Change Photo</button>
+            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-slate-200">
+                <form class="space-y-8">
+                    <div class="flex items-center gap-6 mb-10">
+                        <div
+                            class="w-20 h-20 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-extrabold border-4 border-brand-gold shadow-lg">
+                            TM</div>
+                        <button type="button"
+                            class="px-6 py-2 border-2 border-slate-200 rounded-full font-bold text-slate-600 hover:bg-slate-50 transition-colors">Change
+                            Photo</button>
                     </div>
 
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Display Name</label>
-                            <input type="text" value="Member" placeholder="Enter name">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-bold text-slate-400 text-sm uppercase">Display Name</label>
+                            <input type="text" value="Member"
+                                class="w-full p-4 border-2 border-slate-100 rounded-2xl focus:border-brand-blue outline-none transition-all">
                         </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" value="+27 12 345 6789" disabled>
+                        <div class="space-y-2">
+                            <label class="font-bold text-slate-400 text-sm uppercase">Email Address</label>
+                            <input type="email" value="member@morechats.com"
+                                class="w-full p-4 border-2 border-slate-100 rounded-2xl focus:border-brand-blue outline-none transition-all">
                         </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" value="memember@morechats.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Member Status</label>
-                            <select>
+                        <div class="space-y-2">
+                            <label class="font-bold text-slate-400 text-sm uppercase">Member Status</label>
+                            <select
+                                class="w-full p-4 border-2 border-slate-100 rounded-2xl focus:border-brand-blue outline-none appearance-none bg-slate-50">
                                 <option>Active</option>
                                 <option>Away</option>
                                 <option>Do Not Disturb</option>
@@ -58,9 +72,12 @@
                         </div>
                     </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="save-btn">Save Changes</button>
-                        <button type="button" class="cancel-btn">Discard</button>
+                    <div class="flex gap-4 pt-6">
+                        <button type="submit"
+                            class="px-10 py-4 bg-brand-blue text-white rounded-full font-bold shadow-xl hover:bg-brand-dark transition-all">Save
+                            Changes</button>
+                        <button type="button"
+                            class="px-10 py-4 bg-slate-100 text-slate-600 rounded-full font-bold hover:bg-slate-200 transition-all">Discard</button>
                     </div>
                 </form>
             </div>

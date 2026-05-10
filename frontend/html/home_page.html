@@ -2,122 +2,215 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoreChats | Conversation Never Sleeps</title>
-    <link rel="stylesheet" href="../css/stylesheet.css" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        /* Custom Animations */
+        @keyframes float3D {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        @keyframes tilt3D {
+
+            0%,
+            100% {
+                transform: rotateY(-5deg);
+            }
+
+            50% {
+                transform: rotateY(5deg);
+            }
+        }
+
+        @keyframes pulse3D {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-float {
+            animation: float3D 6s ease-in-out infinite;
+        }
+
+        .animate-tilt {
+            animation: tilt3D 8s linear infinite;
+        }
+
+        .animate-pulse-3d {
+            animation: pulse3D 4s ease-in-out infinite;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="main-div">
-        <nav class="nav-bar">
-            <div class="logo">
-                <img src="../Assets/images/logo.jpg" alt="MoreChats Logo">
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav
+        class="fixed top-5 left-5 right-5 z-50 backdrop-blur-xl bg-white/70 rounded-full shadow-lg flex items-center justify-between px-6 py-3">
+
+        <div class="w-36 h-12 rounded-xl overflow-hidden border flex items-center justify-center">
+            <img src="../Assets/images/logo.jpg" class="h-full object-cover" />
+        </div>
+
+        <div class="space-x-6 hidden md:block">
+            <button onclick="scrollToSection('features')" class="font-semibold hover:text-blue-600">Features</button>
+            <button onclick="scrollToSection('about')" class="font-semibold hover:text-blue-600">About</button>
+        </div>
+
+        <button onclick="location.href='login_page.html'"
+            class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold shadow hover:scale-105 transition">
+            Login
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center px-10 relative">
+
+        <!-- Glow -->
+        <div class="absolute top-20 right-20 w-96 h-96 bg-yellow-300 opacity-20 blur-[120px]"></div>
+
+        <div class="flex flex-col md:flex-row items-center w-full">
+
+            <!-- TEXT -->
+            <div class="flex-1 max-w-xl z-10">
+                <h1
+                    class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-900 to-blue-500 text-transparent bg-clip-text">
+                    Where the conversation never sleeps.
+                </h1>
+
+                <p class="text-lg text-slate-600 mb-6">
+                    Experience fast, simple, and secure messaging and calling for free.
+                    Connect with your community across the globe.
+                </p>
+
+                <button onclick="location.href='sign_in_page.html'"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">
+                    Get Started
+                </button>
             </div>
-            <div class="button-links">
-                <button onclick="document.getElementById('features').scrollIntoView()">features</button>
-                <button onclick="document.getElementById('about').scrollIntoView()">about</button>
-                <button onclick="document.getElementById('feedback').scrollIntoView()">feedback</button>
+
+            <!-- HERO IMAGE -->
+            <div class="flex-1 h-[70vh] bg-contain bg-no-repeat bg-center animate-float"
+                style="background-image: url('../Assets/images/bg_3.png'); filter: drop-shadow(20px 40px 60px rgba(0,0,0,0.25));">
             </div>
-            <div class="login-section">
-                <button class="primary-btn" onclick="location.href='login_page.html'">Login</button>
-            </div>
-        </nav>
 
-        <section class="hero-section">
-            <div class="hero-text">
-                <h1>"Where the conversation never sleeps."</h1>
-                <p>Experience fast, simple, and secure messaging and calling for free. Connect with your community
-                    across the globe on any device.</p>
-                <button class="primary-btn" onclick="location.href='sign_in_page.html'">Get Started</button>
-            </div>
-            <div class="hero-image"></div>
-        </section>
+        </div>
+    </section>
 
-        <section class="middle-section" id="features">
-            <div class="section-header"></div>
-            <div class="zig-zag-container">
-                <div class="first-row">
-                    <div class="box" style="background-image: url('../Assets/images/chat_preview.png');"></div>
-                    <div class="text-placeholder">
-                        Real-Time Messaging<br>
-                        Stay connected with instant delivery of messages and media. Whether it's a quick "Yo!" or a deep
-                        conversation, MoreChats ensures your words land instantly.
-                    </div>
-                </div>
-                <div class="second-row">
-                    <div class="box" style="background-image: url('../Assets/images/secure_vault.png');"></div>
-                    <div class="text-placeholder">
-                        Privacy First Architecture<br>
-                        Your privacy isn't an option; it's the standard. We use end-to-end encryption to ensure your
-                        personal conversations stay between you and the person you're talking to.
-                    </div>
-                </div>
-                <div class="third-row">
-                    <div class="box" style="background-image: url('../Assets/images/community_hub.png');"></div>
-                    <div class="text-placeholder">
-                        Squad Integration<br>
-                        Join specialized groups like our CODM Strategy Squad or use ALIS AI for your document
-                        analysis—all within the same interface you use to chat with friends.
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="middle-section" id="features">
-            <div class="section-header"></div>
-            <div class="zig-zag-container">
+    <!-- FEATURES -->
+    <section id="features" class="bg-slate-50 py-24 px-6">
 
-                <div class="first-row">
-                    <div class="box animate-float"
-                        style="background-image: url('../Assets/images/chat_3d_feature.png');"></div>
-                    <div class="text-placeholder">
-                        Instant Global Connectivity<br>
-                        Stay in the loop with lightning-fast delivery. MoreChats keeps the flow moving without lag.
-                    </div>
-                </div>
+        <h2 class="text-center text-4xl font-extrabold mb-20">
+            Why you'll love MoreChats
+        </h2>
 
-                <div class="second-row">
-                    <div class="box animate-pulse-3d"
-                        style="background-image: url('../Assets/images/secure_vault_3d.png');">
-                    </div>
-                    <div class="text-placeholder">
-                        Privacy as a Standard<br>
-                        Your data is your business. We use end-to-end encryption to keep your personal life strictly
-                        personal.
-                    </div>
-                </div>
+        <div class="max-w-6xl mx-auto space-y-24">
 
-                <div class="third-row">
-                    <div class="box animate-tilt" style="background-image: url('../Assets/images/community_3d.png');">
-                    </div>
-                    <div class="text-placeholder">
-                        Integrated Squad Features<br>
-                        Access your gaming stats, use ALIS AI, or track job matches without ever leaving the
-                        conversation.
-                    </div>
-                </div>
+            <!-- ROW 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 h-72 rounded-3xl shadow bg-cover animate-float"
+                    style="background-image:url('../Assets/images/chat_preview.png')"></div>
 
-            </div>
-        </section>
-
-        <section class="bottom-viewport" id="about">
-            <div class="info-section"></div>
-            <div class="contact-section">
-                <div class="contact-info-right">
-                    <h3>Contact Support</h3>
-                    <p>Email: support@morechats.com</p>
-                    <p>Location: Digital Hub, Global</p>
-                </div>
-                <div class="small-desc-about-us">
-                    <h3>About MoreChats</h3>
-                    <p>MoreChats is a communication platform designed for modern communities. We bridge the gap between
-                        casual messaging and professional integration.</p>
+                <div class="flex-1 text-lg text-slate-600">
+                    <span class="font-extrabold text-blue-600 text-xl">Real-Time Messaging</span><br />
+                    Stay connected with instant delivery of messages and media.
                 </div>
             </div>
-            <footer class="footer-section"></footer>
-        </section>
-    </div>
+
+            <!-- ROW 2 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="flex-1 h-72 rounded-3xl shadow bg-cover animate-pulse-3d"
+                    style="background-image:url('../Assets/images/secure_vault.png')"></div>
+
+                <div class="flex-1 text-lg text-slate-600">
+                    <span class="font-extrabold text-blue-600 text-xl">Privacy First</span><br />
+                    End-to-end encryption keeps your conversations secure.
+                </div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 h-72 rounded-3xl shadow bg-cover animate-tilt"
+                    style="background-image:url('../Assets/images/community_hub.png')"></div>
+
+                <div class="flex-1 text-lg text-slate-600">
+                    <span class="font-extrabold text-blue-600 text-xl">Community Features</span><br />
+                    Join squads, use ALIS AI, and stay connected.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- BOTTOM -->
+    <section id="about"
+        class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-800 to-blue-900 text-white px-6">
+
+        <h2 class="text-4xl font-extrabold mb-10">
+            Ready to start the conversation?
+        </h2>
+
+        <div class="flex flex-col md:flex-row gap-10">
+
+            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
+                <h3 class="font-bold mb-2">Contact Support</h3>
+                <p>support@morechats.com</p>
+                <p>Global Digital Hub</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl">
+                <h3 class="font-bold mb-2">About</h3>
+                <p>
+                    MoreChats is built for modern communities, bridging messaging and productivity.
+                </p>
+            </div>
+
+        </div>
+
+        <footer class="absolute bottom-6 text-sm opacity-70">
+            © 2024 MoreChats. Designed for the community.
+        </footer>
+
+    </section>
+
+
+    <!-- SCRIPT -->
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
 </body>
 
 </html>
