@@ -1,19 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { createBrowserRouter, createRoutesFromElements ,Route,Router,RouterProvider } from 'react-router'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-  
-        <a href="tel:+276995617470">Call +1 (234) 567-890</a>
-     
-    </>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<h1>Welcom to the chat app</h1>}/>
+    )
   )
-}
 
+  return <RouterProvider router={router}/>
+}
 export default App
