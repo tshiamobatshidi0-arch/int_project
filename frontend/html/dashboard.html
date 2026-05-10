@@ -4,103 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Page</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard | MoreChats</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand-blue': '#0056b3', 'brand-gold': '#ffd12b', 'brand-dark': '#002b5a' },
+                    backgroundImage: { 'happy-gradient': 'linear-gradient(135deg, #0056b3 0%, #002b5a 100%)' },
+                    fontFamily: { lexend: ['Lexend', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <script type="text/javascript" src="../javascript/links.js"></script>
-    <div class="dashboard-wrapper">
-        <div class="settings">
-            <div class="top-icons">
-                <div class="icon" title="Home Hub"
-                    style="background-image: url('../Assets/images/profile_icon.jpg'); background-size: cover;">
-                </div>
-                <div class="icon" title="Gaming Squad"
-                    style="display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                    GS
-                </div>
+<body class="font-lexend bg-slate-50 overflow-hidden">
+    <script src="../javascript/links.js"></script>
+
+    <div class="grid grid-cols-[80px_360px_1fr] h-screen">
+        <div class="bg-happy-gradient flex flex-col py-8 items-center justify-between shadow-2xl z-20">
+            <div class="flex flex-col gap-6">
+                <div class="w-12 h-12 rounded-2xl bg-cover bg-center border-2 border-white/20 shadow-lg"
+                    style="background-image: url('../Assets/images/profile_icon.jpg');"></div>
+                <div
+                    class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white font-bold backdrop-blur-sm">
+                    GS</div>
             </div>
-            <div class="bottom-icons">
-                <button onclick="go_to_settings()">
-                    <div class="icon" title="Settings"
-                        style="background-color: #ffd12b; display: flex; align-items: center; justify-content: center;">
-                        ⚙️
+            <button onclick="go_to_settings()"
+                class="w-12 h-12 bg-brand-gold rounded-2xl flex items-center justify-center shadow-lg hover:rotate-90 transition-transform text-xl">⚙️</button>
+        </div>
+
+        <div class="bg-white border-r border-slate-200 flex flex-col shadow-sm">
+            <div class="p-6">
+                <input type="text" placeholder="Search..."
+                    class="w-full bg-slate-100 rounded-full py-3 px-6 outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all">
+            </div>
+            <div class="flex-1 overflow-y-auto">
+                <div class="flex items-center gap-4 p-5 bg-blue-50/50 border-r-4 border-brand-blue cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue font-bold">
+                        CS</div>
+                    <div class="flex-1 truncate">
+                        <h4 class="font-bold text-sm">CODM Strategy Squad</h4>
+                        <p class="text-xs text-slate-500 truncate font-medium">John: Yo! Who's down for some Ranked?</p>
                     </div>
-                </button>
+                </div>
             </div>
         </div>
 
-        <div class="people-div">
-            <div class="search-bar">
-                <input type="text" placeholder="Search or start a new chat"
-                    style="width: 100%; height: 100%; background: none; border: none; padding: 0 15px; color: white; outline: none;">
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-info">
-                    <strong>ALIS AI Assistant</strong>
-                    <p>Legal similarity analysis complete...</p>
+        <div class="flex flex-col relative bg-slate-50">
+            <header class="p-6 bg-white border-b border-slate-200 flex justify-between items-center shadow-sm">
+                <div>
+                    <h3 class="font-extrabold text-lg">CODM Strategy Squad</h3>
+                    <p class="text-xs text-green-500 font-bold">8 online</p>
                 </div>
-                <span class="chat-time">10:45 AM</span>
-            </div>
+            </header>
 
-            <div class="contact-item active">
-                <div class="contact-info">
-                    <strong>CODM Strategy Squad</strong>
-                    <p>John: Ready for the tournament?</p>
+            <div class="flex-1 p-8 overflow-y-auto flex flex-col gap-4">
+                <div
+                    class="bg-white p-4 rounded-[20px] rounded-bl-none max-w-[65%] shadow-sm self-start border border-slate-100">
+                    <strong class="text-xs text-brand-blue block mb-1">John</strong>
+                    <p class="text-sm">Yo! Who's down for some Ranked matches tonight?</p>
+                    <span class="text-[10px] text-slate-400 block text-right mt-1 font-bold">9:10 AM</span>
                 </div>
-                <span class="chat-time">9:12 AM</span>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-info">
-                    <strong>MatchPoint Updates</strong>
-                    <p>New job match found in your area!</p>
-                </div>
-                <span class="chat-time">Yesterday</span>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-info">
-                    <strong>Sarah Jenkins</strong>
-                    <p>Let's catch up later today.</p>
-                </div>
-                <span class="chat-time">Monday</span>
-            </div>
-        </div>
-
-        <div class="chats-div">
-            <div class="chat-header">
-                <div class="header-info">
-                    <h3>CODM Strategy Squad</h3>
-                    <p>John, Mike, Sarah, and 5 others are online</p>
+                <div class="bg-brand-blue text-white p-4 rounded-[20px] rounded-br-none max-w-[65%] shadow-md self-end">
+                    <p class="text-sm">I'm in! Just finishing up school modules first.</p>
+                    <span class="text-[10px] opacity-70 block text-right mt-1 font-bold">9:12 AM</span>
                 </div>
             </div>
 
-            <div class="chat-body">
-                <div class="message-received">
-                    <strong>John</strong>
-                    <p>Yo! Who's down for some Ranked matches tonight?</p>
-                    <span class="msg-time">9:10 AM</span>
-                </div>
-
-                <div class="message-sent">
-                    <p>I'm in! Just finishing up some school modules first.</p>
-                    <span class="msg-time">9:12 AM</span>
-                </div>
-
-                <div class="message-received">
-                    <strong>Sarah</strong>
-                    <p>Count me in too. I'll be on around 8 PM. 🎮</p>
-                    <span class="msg-time">9:15 AM</span>
-                </div>
-            </div>
-
-            <div class="chat-input-area">
-                <button class="attach-btn">+</button>
-                <input type="text" placeholder="Type a message to the squad...">
-                <button class="send-btn">Send</button>
+            <div class="h-[90px] bg-white border-t border-slate-200 p-6 flex items-center gap-4">
+                <button
+                    class="w-10 h-10 rounded-full bg-slate-100 text-slate-500 font-bold hover:bg-brand-gold hover:text-white transition-colors">+</button>
+                <input type="text" placeholder="Type a message..."
+                    class="flex-1 bg-slate-50 rounded-full px-6 py-3 outline-none focus:bg-white focus:ring-2 focus:ring-brand-blue/10 transition-all border border-transparent focus:border-slate-200">
+                <button
+                    class="bg-brand-blue text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-brand-dark transition-all active:scale-95">Send</button>
             </div>
         </div>
     </div>
