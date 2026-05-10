@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap");
+
+:root {
+  --brand-blue: #0056b3;
+  --brand-gold: #ffd12b;
+  --text-dark: #0f172a;
+  --happy-gradient: linear-gradient(135deg, #0056b3 0%, #002b5a 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif; /* Matches home page */
+}
+
+body {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  height: 100vh;
+}
+
+/* Left side uses the home page's happy gradient */
+.left-side {
+  background: var(--happy-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.brand-logo {
+  width: 120px;
+  height: 120px;
+  background: var(--brand-gold); /* Matches home page brand colors */
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.left-side h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 25px;
+}
+
+/* Right side matches the clean middle-section aesthetic */
+.right-side {
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 30px; /* Matches zig-zag box rounding */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.login-container h2 {
+  color: var(--brand-blue);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 15px;
+  border: 2px solid #f1f5f9;
+  background: #f8fafc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: var(--brand-gold);
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--brand-blue);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  background: #003d7a;
+}
+
+/* --- login.css --- */
+
+.left-side {
+  background: var(--happy-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Fixed Logo Container with Clipping */
+.brand-logo {
+  width: 140px; /* Wider to accommodate the text */
+  height: 140px;
+  background: #ffffff; /* White background makes the 3D colors pop */
+  backdrop-filter: blur(15px);
+  border-radius: 30px; /* Match the "box" style of your home page features */
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* This clips the unnecessary sides */
+  margin-bottom: 25px;
+}
+
+.brand-logo img {
+  height: 150%; /* Zoomed in to focus on the 3D chat bubbles */
+  width: auto;
+  object-fit: cover;
+  transform: translateY(-5px); /* Fine-tune centering */
+}
+
+.left-side h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

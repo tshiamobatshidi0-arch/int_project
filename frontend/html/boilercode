@@ -1,0 +1,73 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../css/stylesheet.css" />
+</head>
+
+<body>
+
+    <div class="main-div">
+        <div class="nav-bar">
+            <div class="logo">
+                <img SRC="" title="LOGO" />
+            </div>
+            <div class="button-links">
+                <button>
+                    info
+                </button>
+                <button>
+                    info
+                </button>
+                <button>
+                    info
+                </button>
+            </div>
+            <div class="login-section">
+                <button>
+                    Login In
+                </button>
+            </div>
+        </div>
+        <div class="hero-section">
+            <div>
+                web description
+            </div>
+            <div>
+                description
+            </div>
+        </div>
+        <div class="middle-section">
+            <div class="first-row">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="second-row">
+                <div></div>
+                <div></div>
+
+            </div>
+            <div class="third-row">
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+        <div class="info-section">
+
+        </div>
+        <div class="contact-section">
+            <div class="contact-info-right"></div>
+            <div class="small-desc-about-us"></div>
+        </div>
+        <div class="footer-section">
+
+        </div>
+    </div>
+
+</body>
+
+</html>-->
