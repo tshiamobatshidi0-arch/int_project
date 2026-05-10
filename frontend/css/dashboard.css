@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap");
+
+:root {
+  --brand-blue: #0056b3;
+  --brand-gold: #ffd12b;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --happy-gradient: linear-gradient(135deg, #0056b3 0%, #002b5a 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif; /* Matches home page */
+}
+
+.dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 80px 360px 1fr;
+  height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* --- Sidebar: Vibrant Blue --- */
+.settings {
+  background: var(--happy-gradient); /* Matches home page footer/gradient */
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 18px; /* Matches home page logo/box rounding */
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon:hover {
+  background-color: var(--brand-gold);
+  transform: scale(1.1);
+  color: var(--text-dark);
+}
+
+/* --- Contact List: Clean & White --- */
+.people-div {
+  background-color: var(--bg-white);
+  border-right: 1px solid #e2e8f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  background-color: #f1f5f9;
+  height: 45px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 8px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid transparent;
+}
+
+.contact-item:hover {
+  background-color: #f1f5f9;
+}
+
+.contact-item.active {
+  background-color: #ebf5ff;
+  border-color: #0056b320;
+}
+
+.contact-info strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.contact-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.chat-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --- Chat Area: Bright & Inviting --- */
+.chats-div {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat-header {
+  height: 70px;
+  background-color: var(--bg-white);
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.chat-header h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.chat-header p {
+  font-size: 0.85rem;
+  color: #10b981; /* Fresh green for online status */
+  font-weight: 600;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background-image: radial-gradient(var(--brand-gold) 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+  opacity: 0.8; /* Subtle pattern like WhatsApp but lighter */
+}
+
+.message-received,
+.message-sent {
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  max-width: 65%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.message-received {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  border-bottom-left-radius: 4px;
+}
+
+.message-sent {
+  background: var(--brand-blue);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.msg-time {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+}
+
+/* --- Input Area: Modern Floating Style --- */
+.chat-input-area {
+  height: 90px;
+  background-color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  gap: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.chat-input-area input {
+  flex: 1;
+  background: #f1f5f9;
+  border: 2px solid transparent;
+  border-radius: 30px; /* High rounding */
+  padding: 12px 25px;
+  color: var(--text-dark);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.chat-input-area input:focus {
+  background: white;
+  border-color: var(--brand-gold);
+}
+
+.chat-input-area button {
+  background: var(--brand-gold);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--text-dark);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 209, 43, 0.3);
+}
+
+.chat-input-area button:hover {
+  transform: scale(1.1) rotate(5deg);
+}

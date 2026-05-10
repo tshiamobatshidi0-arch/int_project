@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="../javascript/links.js"></script>
+    <div class="dashboard-wrapper">
+        <div class="settings">
+            <div class="top-icons">
+                <div class="icon" title="Home Hub"
+                    style="background-image: url('../Assets/images/profile_icon.jpg'); background-size: cover;">
+                </div>
+                <div class="icon" title="Gaming Squad"
+                    style="display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                    GS
+                </div>
+            </div>
+            <div class="bottom-icons">
+                <button onclick="go_to_settings()">
+                    <div class="icon" title="Settings"
+                        style="background-color: #ffd12b; display: flex; align-items: center; justify-content: center;">
+                        ⚙️
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="people-div">
+            <div class="search-bar">
+                <input type="text" placeholder="Search or start a new chat"
+                    style="width: 100%; height: 100%; background: none; border: none; padding: 0 15px; color: white; outline: none;">
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-info">
+                    <strong>ALIS AI Assistant</strong>
+                    <p>Legal similarity analysis complete...</p>
+                </div>
+                <span class="chat-time">10:45 AM</span>
+            </div>
+
+            <div class="contact-item active">
+                <div class="contact-info">
+                    <strong>CODM Strategy Squad</strong>
+                    <p>John: Ready for the tournament?</p>
+                </div>
+                <span class="chat-time">9:12 AM</span>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-info">
+                    <strong>MatchPoint Updates</strong>
+                    <p>New job match found in your area!</p>
+                </div>
+                <span class="chat-time">Yesterday</span>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-info">
+                    <strong>Sarah Jenkins</strong>
+                    <p>Let's catch up later today.</p>
+                </div>
+                <span class="chat-time">Monday</span>
+            </div>
+        </div>
+
+        <div class="chats-div">
+            <div class="chat-header">
+                <div class="header-info">
+                    <h3>CODM Strategy Squad</h3>
+                    <p>John, Mike, Sarah, and 5 others are online</p>
+                </div>
+            </div>
+
+            <div class="chat-body">
+                <div class="message-received">
+                    <strong>John</strong>
+                    <p>Yo! Who's down for some Ranked matches tonight?</p>
+                    <span class="msg-time">9:10 AM</span>
+                </div>
+
+                <div class="message-sent">
+                    <p>I'm in! Just finishing up some school modules first.</p>
+                    <span class="msg-time">9:12 AM</span>
+                </div>
+
+                <div class="message-received">
+                    <strong>Sarah</strong>
+                    <p>Count me in too. I'll be on around 8 PM. 🎮</p>
+                    <span class="msg-time">9:15 AM</span>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <button class="attach-btn">+</button>
+                <input type="text" placeholder="Type a message to the squad...">
+                <button class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

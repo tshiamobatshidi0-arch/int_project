@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account | MoreChats</title>
+    <link rel="stylesheet" href="../css/edit_account.css">
+</head>
+
+<body>
+    <div class="edit-wrapper">
+        <nav class="side-nav">
+            <div class="logo-box">
+                <img src="../Assets/images/logo.jpg" alt="MoreChats">
+            </div>
+            <ul class="nav-links">
+                <li class="active">Profile Info</li>
+                <li onclick="location.href='dashboard.html'">Back to Chats</li>
+            </ul>
+        </nav>
+
+        <main class="content-area">
+            <header class="content-header">
+                <h1>Edit Your Account</h1>
+                <p>Manage your MoreChats member identity.</p>
+            </header>
+
+            <div class="settings-card">
+                <form id="edit-form">
+                    <div class="avatar-upload">
+                        <div class="current-avatar">
+                            <span>TM</span>
+                        </div>
+                        <button type="button" class="secondary-btn">Change Photo</button>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Display Name</label>
+                            <input type="text" value="Member" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" value="+27 12 345 6789" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" value="memember@morechats.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Member Status</label>
+                            <select>
+                                <option>Active</option>
+                                <option>Away</option>
+                                <option>Do Not Disturb</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">Save Changes</button>
+                        <button type="button" class="cancel-btn">Discard</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
