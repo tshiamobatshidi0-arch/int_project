@@ -1,5 +1,5 @@
 import app from "./firebase.db.connection"
-
+import { Resend } from 'resend';
 import { initializeApp } from "firebase/app";
 import { 
   getFirestore, 
@@ -13,13 +13,14 @@ import {
 } from "firebase/firestore";
 
 
+
 const db = getFirestore(app);
 
 export async function createContact(phoneNumber,email, firstName, lastName, photoUrl) {
   try {
     // We use the phone number directly as the document ID
     const contactRef = doc(db, "contacts", phoneNumber);
-    
+
     await setDoc(contactRef, {
       phone_number: phoneNumber,
       email: email,
